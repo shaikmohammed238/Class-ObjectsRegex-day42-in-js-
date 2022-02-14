@@ -107,3 +107,19 @@ let validateemail=()=>{
             console.error(e);
         }
 }
+/* UC 7: Ensure “.” after bridgelabz and validate the mandatory 3rd part i.e. co */
+{
+    let validateemail=()=>{
+        try{
+        let email='abc.xyz@bridgelabz.co.in';
+        let emailpattern=new RegExp('^(abc).?[a-z]{3,}[@](bridgelabz).?(co).?[a-z]{2,}$');
+        if (emailpattern.test(email)){
+                    console.log("valid email :" + email);}
+        else{
+                    throw 'invalid email';}
+            }
+            catch (e) {
+                console.error(e);
+            }
+    }
+}
