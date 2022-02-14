@@ -8,7 +8,7 @@ by India Post. Create a regex pattern to validate PIN Code UC 1 PIN code 400088
 */{
     let validatepincode = () => {
         try {
-            let Pincode = "51600";
+            let Pincode = "516001";
             let pincodepattern = new RegExp('^[1-9][0-9]{5}$');
             if (pincodepattern.test(Pincode))
                 console.log("pincode is valid:" + Pincode);
