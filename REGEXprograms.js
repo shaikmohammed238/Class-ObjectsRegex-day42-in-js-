@@ -58,3 +58,20 @@ Check for 400088B – this should fail
     }
     validatepincode();
 }    
+/* UC 4: Make sure 400 088 is also valid along with 400088
+*/{
+    let validatepincode = () => {
+        try {
+            let Pincode = "400 088";
+            let pincodepattern = new RegExp('^[1-9][0-9]{5}$');
+            if (pincodepattern.test(Pincode))
+                console.log("pincode is valid:" + Pincode);
+            else
+                throw 'error pincode is invalid';
+        }
+        catch (e) {
+            console.error(e);
+        }
+    }
+    validatepincode();
+}    
