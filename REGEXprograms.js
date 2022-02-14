@@ -39,3 +39,22 @@ Check for A400088 – this should fail
     }
     validatepincode();
 }
+/* UC 3: Restrict the PIN code from taking alphabets or special characters at the End.
+Check for 400088B – this should fail
+*/
+{
+    let validatepincode = () => {
+        try {
+            let Pincode = "400088B";
+            let pincodepattern = new RegExp('^[1-9][0-9]{5}$');
+            if (pincodepattern.test(Pincode))
+                console.log("pincode is valid:" + Pincode);
+            else
+                throw 'error pincode is invalid';
+        }
+        catch (e) {
+            console.error(e);
+        }
+    }
+    validatepincode();
+}    
