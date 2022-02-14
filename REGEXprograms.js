@@ -75,3 +75,21 @@ Check for 400088B – this should fail
     }
     validatepincode();
 }    
+/* UC 5:- Validate Email address with a regex. The email consists of minimum 3 and optional 2 more
+parts with mandatory @ and .    ex:- abc.xyz@bridgelabz.co.in 
+Here abc, bridgelabz and co are mandatory and the remaining 2 are optional
+To begin with lets validate the mandatory part and start with abc   [A-Z]{3}[@][bridgelabz].?[co].?[a-z]{2}
+*/let validateemail=()=>{
+    try{
+    let email='abc.xyz@bridgelabz.co.in';
+    let emailpattern=new RegExp('^(abc).?[a-z]{3,}[@](bridgelabz).?(co).?[a-z]{2,}$');
+    if (emailpattern.test(email)){
+                console.log("valid email :" + email);}
+    else{
+                throw 'invalid email';}
+        }
+        catch (e) {
+            console.error(e);
+        }
+}
+validateemail();
